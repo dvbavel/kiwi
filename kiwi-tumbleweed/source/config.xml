@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<image name='openSUSE_Tumblweed_Server' displayname='openSUSE_Tumblweed_Server' schemaversion='5.2'>
+  <description type='system'>
+    <author>Dyon van Bavel</author>
+    <contact>Dyon@dyon.co</contact>
+    <specification>A text-only base</specification>
+  </description>
+  <preferences>
+    <type checkprebuilt='true' boot='vmxboot/suse-Tumbleweed' fsnocheck='true' filesystem='ext3' bootloader='grub2' format='qcow2' kernelcmdline='quiet' fsmountoptions='acl' image='vmx'>
+      <size unit='M' additive='false'>5120</size>
+    </type>
+    <version>0.0.2</version>
+    <packagemanager>zypper</packagemanager>
+    <rpm-check-signatures>false</rpm-check-signatures>
+    <rpm-force>false</rpm-force>
+    <boot-theme>studio</boot-theme>
+    <timezone>Europe/Amsterdam</timezone>
+    <hwclock>localtime</hwclock>
+    <locale>en_US</locale>
+  </preferences>
+  <users group='root'>
+    <user name='root' pwd='$1$pepersal$pjjwSL5AJuubghUB2t.1K.' home='/root' shell='/bin/bash'/>
+  </users>
+  <packages type='image' patternType='onlyRequired'>
+    <opensusePattern name='base'/>
+    <opensusePattern name='devel_basis'/>
+    <package name='qemu-tools'/>
+    <package name='grub2'/>
+    <package name='openSUSE-build-key'/>
+  </packages>
+  <packages type='bootstrap'>
+    <package name='filesystem'/>
+    <package name='glibc-locale'/>
+    <package name='module-init-tools'/>
+  </packages>
+  <repository type='rpm-md'>
+    <source path='http://download.opensuse.org/update/tumbleweed/'/>
+  </repository>
+  <repository type='yast2'>
+    <source path='http://download.opensuse.org/tumbleweed/repo/oss'/>
+  </repository>
+</image>

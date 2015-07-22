@@ -1,0 +1,5 @@
+[OpenStack_Kilo]
+enabled=1
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/Cloud:/OpenStack:/Kilo/openSUSE_Tumbleweed/
+type=rpm-md

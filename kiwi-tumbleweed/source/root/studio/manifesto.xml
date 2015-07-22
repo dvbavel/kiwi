@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <studio_uuid>8466bd24-fd59-11df-9f90-475ae2f5345b</studio_uuid>
+  <appliance_uuid>7f713078-0f39-11e5-af98-a76352074698</appliance_uuid>
+  <config>
+    <image name="Dyons_openSUSE_13.2_Server" displayname="Dyons_openSUSE_13.2_Server" schemaversion="5.2">
+      <description type="system">
+        <author>Dyon van Bavel</author>
+        <contact>studio-devel@suse.de</contact>
+        <specification>A text-only base</specification>
+      </description>
+      <preferences>
+        <type checkprebuilt="true" boot="vmxboot/suse-13.2" fsnocheck="true" filesystem="ext3" bootloader="grub2" format="qcow2" kernelcmdline="quiet" fsmountoptions="acl" image="vmx">
+          <size unit="M" additive="false">5120</size>
+        </type>
+        <version>0.0.2</version>
+        <packagemanager>ensconce</packagemanager>
+        <rpm-check-signatures>false</rpm-check-signatures>
+        <rpm-force>false</rpm-force>
+        <boot-theme>studio</boot-theme>
+        <timezone>Europe/Amsterdam</timezone>
+        <hwclock>localtime</hwclock>
+        <locale>en_US</locale>
+      </preferences>
+      <users group="root">
+        <user name="root" pwd="$1$KUge0X6D$.R4D6B35M6rjbV3d/rz39." home="/root" shell="/bin/bash"/>
+      </users>
+      <repository type="rpm-md">
+        <source path="http://download.opensuse.org/update/13.2/"/>
+      </repository>
+      <repository type="yast2">
+        <source path="http://download.opensuse.org/distribution/13.2/repo/oss/"/>
+      </repository>
+      <packages type="image" patternType="onlyRequired">
+        <package name="SuSEfirewall2"/>
+        <package name="grub2"/>
+        <package name="glibc-locale"/>
+        <package name="iputils"/>
+        <package name="kernel-default"/>
+        <package name="less"/>
+        <package name="plymouth"/>
+        <package name="syslog-ng"/>
+        <package name="vim"/>
+        <package name="yast2"/>
+        <package name="yast2-firstboot"/>
+        <package name="zypper"/>
+        <package name="e2fsprogs"/>
+        <package name="aaa_base"/>
+        <package name="branding-openSUSE"/>
+        <package name="patterns-openSUSE-base"/>
+        <package name="hwinfo"/>
+        <package name="netcfg"/>
+        <package name="openSUSE-build-key"/>
+        <package name="openssh"/>
+        <package name="polkit-default-privs"/>
+        <package name="rpcbind"/>
+        <package name="timezone"/>
+        <package name="gsettings-backend-dconf"/>
+        <archive name="plymouth.tar" bootinclude="true"/>
+        <package name="gfxboot-devel" bootinclude="true"/>
+      </packages>
+      <packages type="bootstrap">
+        <package name="filesystem"/>
+        <package name="glibc-locale"/>
+        <package name="module-init-tools"/>
+      </packages>
+    </image>
+  </config>
+  <extra_config name="Dyons_openSUSE_13.2_Server">
+    <appliance_id>1416439</appliance_id>
+    <arch>x86_64</arch>
+    <version>0.0.2</version>
+    <logo>78/2a21cd04710c114576180a58c55522</logo>
+    <background>5a/e4b9afa3d9c2dfc66dcf386689d98d</background>
+    <base_system>13.2</base_system>
+    <image_type>kvm</image_type>
+    <time_zone>Europe/Amsterdam</time_zone>
+    <region>Europe</region>
+    <default_runlevel>3</default_runlevel>
+    <install_recommended>false</install_recommended>
+    <xen_host>false</xen_host>
+    <exclude_docs>false</exclude_docs>
+    <disable_branding>false</disable_branding>
+    <template>openSUSE 13.2, Server</template>
+    <locale>
+      <language>en_US.UTF-8</language>
+      <keytable>us.map.gz</keytable>
+    </locale>
+    <estimated_size>920</estimated_size>
+    <size_offset>0</size_offset>
+    <non_interactive/>
+    <oem_disk_size>5G</oem_disk_size>
+    <check_supportability>false</check_supportability>
+    <repository type="rpm-md">
+      <source path="http://download.opensuse.org/update/13.2/" internal="false"/>
+      <name>openSUSE 13.2 Updates</name>
+    </repository>
+    <repository type="yast2">
+      <source path="http://download.opensuse.org/distribution/13.2/repo/oss/" internal="false"/>
+      <name>openSUSE 13.2 OSS</name>
+    </repository>
+    <network config="dhcp">
+    </network>
+    <startup_programs>
+    </startup_programs>
+    <overlay_files remove="">
+    </overlay_files>
+    <firewall>
+      <firewall_enabled>yes</firewall_enabled>
+      <firewall_ssh>opened</firewall_ssh>
+      <firewall_http>opened</firewall_http>
+      <firewall_webyast>closed</firewall_webyast>
+    </firewall>
+    <webyast enabled="false" version="">
+    </webyast>
+    <x_keyboard model="microsoftpro" layout="us" variant="" keycode="xfree86" LA="" RA="" SL="" RC="" OPT=""/>
+    <enable_root_firstboot>false</enable_root_firstboot>
+    <window_manager/>
+    <display_manager/>
+  </extra_config>
+</manifest>
